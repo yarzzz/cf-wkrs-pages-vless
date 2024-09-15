@@ -129,12 +129,12 @@ export default {
                         });
                     }
                     default:
-                        // return new Response('Not found', { status: 404 });
+                        return new Response('Not found', { status: 404 });
                         // For any other path, reverse proxy to 'maimai.sega.jp' and return the original response
-                        url.hostname = 'maimai.sega.jp';
-                        url.protocol = 'https:';
-                        request = new Request(url, request);
-                        return await fetch(request);
+                        // url.hostname = 'maimai.sega.jp';
+                        // url.protocol = 'https:';
+                        // request = new Request(url, request);
+                        // return await fetch(request);
                 }
             } else {
                 return await vlessOverWSHandler(request);
